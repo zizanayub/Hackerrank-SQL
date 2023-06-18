@@ -230,7 +230,7 @@ Success!
 
 
 
-### ▶️ 07. Weather Observation Station 3
+### ▶️ 08. Weather Observation Station 3
 
 
 
@@ -252,7 +252,7 @@ WHERE ID%2=0;
 
 
 
-### ▶️ 08. Weather Observation Station 4
+### ▶️ 09. Weather Observation Station 4
 
 
 
@@ -284,7 +284,7 @@ FROM STATION;
 Success!
 
 
-### ▶️ 09. Weather Observation Station 5
+### ▶️ 10. Weather Observation Station 5
 
 
 
@@ -336,7 +336,7 @@ Success!!!
 
 
 
-### ▶️ 10. Weather Observation Station 6
+### ▶️ 11. Weather Observation Station 6
 
 
 
@@ -366,7 +366,7 @@ Success!!
 
 
 
-### ▶️ 11. Weather Observation Station 7
+### ▶️ 12. Weather Observation Station 7
 
 
 
@@ -398,7 +398,7 @@ Success!!
 
 
 
-### ▶️ 12. Weather Observation Station 8
+### ▶️ 13. Weather Observation Station 8
 
 
 
@@ -434,7 +434,7 @@ Success!!
 
 
 
-### ▶️ 13. Weather Observation Station 9
+### ▶️ 14. Weather Observation Station 9
 
 
 
@@ -461,3 +461,127 @@ SELECT DISTINCT CITY
 FROM STATION
 WHERE CITY NOT REGEXP "^[aeiou]";
 ```
+
+
+
+
+
+
+
+### ▶️ 15. Weather Observation Station 10
+
+
+
+Question:
+
+
+
+Query the list of CITY names from STATION that do not end with vowels. Your result cannot contain duplicates.
+
+Input Format
+
+The STATION table is described as follows:
+
+
+![image](https://github.com/zizanayub/Hackerrank-SQL/assets/65456659/107d308e-3c6d-47bc-91b7-c50b7a206978)
+
+
+
+
+Solution:
+
+```SQL
+SELECT DISTINCT CITY
+FROM Station
+WHERE CITY NOT REGEXP "[aeiou]$";
+```
+
+
+
+Success!!
+
+
+
+
+
+### ▶️ 15. Weather Observation Station 11
+
+
+
+Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
+
+Input Format
+
+The STATION table is described as follows:
+
+
+![image](https://github.com/zizanayub/Hackerrank-SQL/assets/65456659/530a0d42-3d5c-44e4-95a9-606f584cd49b)
+
+
+
+
+```SQL
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY NOT REGEXP "^[aeiou]"
+      OR CITY NOT REGEXP "[aeiou]$";
+```
+
+
+
+OR
+
+
+
+```SQL
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LEFT(CITY,1) NOT IN ('a','e','i','o','u')
+      OR RIGHT (CITY,1) NOT IN ('a','e','i','o','u');
+```
+
+
+
+Success!!
+
+
+
+
+
+### ▶️ 16. Weather Observation Station 12
+
+
+
+Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+
+Input Format
+
+The STATION table is described as follows:
+
+![image](https://github.com/zizanayub/Hackerrank-SQL/assets/65456659/3c1e3d74-fec1-409d-b7e0-d104b9f92e7d)
+
+
+
+
+```SQL
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LEFT(CITY,1) NOT IN ('a','e','i','o','u') 
+      AND RIGHT(CITY,1) NOT IN ('a','e','i','o','u');
+```
+
+
+
+OR
+
+
+
+```SQL
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY NOT REGEXP "^[aeiou]"
+     AND CITY NOT REGEXP "[aeiou]$"
+```
+
+
+Success!!!
