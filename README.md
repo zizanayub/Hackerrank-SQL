@@ -585,3 +585,227 @@ WHERE CITY NOT REGEXP "^[aeiou]"
 
 
 Success!!!
+
+
+
+
+
+### ▶️ 17. Higher Than 75 Marks
+
+
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Input Format
+
+The STUDENTS table is described as follows:
+
+
+
+![image](https://github.com/zizanayub/Hackerrank-SQL/assets/65456659/bf060d4f-b0e4-4dfc-b955-cb52a2ba99e1)
+
+
+
+![image](https://github.com/zizanayub/Hackerrank-SQL/assets/65456659/bb1175db-2c14-4ab5-bbf5-db47fbac7694)
+
+
+
+
+```SQL
+SELECT Name
+FROM STUDENTS
+WHERE Marks > 75
+ORDER BY RIGHT(Name,3), ID;
+```
+
+
+
+Success!!
+
+
+
+
+
+
+
+### ▶️ 18. Employee Names
+
+
+Write a query that prints a list of employee names (i.e.: the name attribute) from the Employee table in alphabetical order.
+
+Input Format
+
+The Employee table containing employee data for a company is described as follows:
+
+
+![image](https://github.com/zizanayub/Hackerrank-SQL/assets/65456659/c7cd9782-0e10-4440-8713-539711268b99)
+
+
+
+
+```SQL
+SELECT Name
+FROM Employee
+ORDER BY Name;
+```
+
+
+
+SUCCESS!!!\
+
+
+
+
+
+
+### ▶️ 19. Employee Salaries
+
+
+
+![image](https://github.com/zizanayub/Hackerrank-SQL/assets/65456659/29c95bd7-2aeb-4882-995a-f7f7ab9da538)
+
+
+
+Solution:
+
+```SQL
+SELECT Name
+FROM Employee
+WHERE Salary > 2000 AND months < 10; 
+```
+
+
+
+
+
+### ▶️ 20. Type of Triangle
+
+
+
+![image](https://github.com/zizanayub/Hackerrank-SQL/assets/65456659/0bc231dc-819c-42b5-9731-5b28d51476ec)
+
+
+
+
+Solution:
+
+
+```SQL
+SELECT 
+CASE 
+    WHEN A+B <= C OR A+C <= B OR B+C <= A THEN "Not A Triangle"
+    WHEN A=B AND B=C AND C=A THEN "Equilateral"
+    WHEN A=B OR B=C OR C=A THEN "Isosceles"
+    ELSE "Scalene"
+END AS "Triangle Type"
+FROM TRIANGLES; 
+```
+
+
+
+### ▶️ 💡 21. The PADS
+
+
+
+
+
+![image](https://github.com/zizanayub/Hackerrank-SQL/assets/65456659/289e7cd1-28cf-4470-9bd0-856983c73327)
+
+Link: https://www.hackerrank.com/challenges/the-pads/problem
+
+
+
+Solution:
+
+
+```SQL
+SELECT CONCAT(Name,"(",LEFT(Occupation,1),")")
+FROM OCCUPATIONS
+ORDER BY Name,LEFT(Occupation,1);
+
+
+SELECT CONCAT("There are a total of ", COUNT(Occupation)," ",LOWER(Occupation),"s.")
+FROM OCCUPATIONS
+GROUP BY Occupation
+ORDER BY COUNT(Occupation), Occupation; 
+```
+
+
+
+
+
+### ▶️ 💡 22. New Companies
+
+
+Problem: https://www.hackerrank.com/challenges/the-company/problem
+
+
+
+```SQL
+SELECT c.company_code, 
+      c.founder, 
+      COUNT(DISTINCT lm.lead_manager_code), 
+      COUNT(DISTINCT sm.senior_manager_code), 
+      COUNT(DISTINCT m.manager_code), 
+      COUNT(DISTINCT e.employee_code)
+FROM company c
+JOIN lead_manager lm
+ON lm.company_code = c.company_code
+JOIN senior_manager sm
+ON sm.lead_manager_code = lm.lead_manager_code
+JOIN manager m
+ON m.senior_manager_code = sm.senior_manager_code
+JOIN employee e
+ON e.manager_code = m.manager_code
+GROUP BY c.company_code, c.founder
+ORDER BY c.company_code;
+```
+
+
+
+
+
+
+### ▶️ 💡 23. Revising Aggregations - The Count Function
+
+
+Link: https://www.hackerrank.com/challenges/revising-aggregations-the-count-function
+
+
+
+```SQL
+SELECT COUNT(ID) "Number of Cities"
+FROM CITY
+WHERE Population > 100000;
+```
+
+
+
+
+### ▶️ 💡 24. Revising Aggregations - The Sum Function
+
+
+```SQL
+SELECT SUM(Population)
+FROM CITY
+WHERE District = "California";
+```
+
+
+
+
+### ▶️ 💡 25. Revising Aggregations - Averages
+
+
+
+Link: https://www.hackerrank.com/challenges/revising-aggregations-the-average-function/problem
+
+
+```SQL
+SELECT AVG(Population)
+FROM CITY
+WHERE District = "California";
+```
+
+
+
+Success!
