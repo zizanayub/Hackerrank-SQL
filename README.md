@@ -677,7 +677,7 @@ WHERE Salary > 2000 AND months < 10;
 
 
 
-### ▶️ 20. Type of Triangle
+### ▶️ 💡 20. Type of Triangle
 
 
 
@@ -765,7 +765,7 @@ ORDER BY c.company_code;
 
 
 
-### ▶️ 💡 23. Revising Aggregations - The Count Function
+### ▶️  23. Revising Aggregations - The Count Function
 
 
 Link: https://www.hackerrank.com/challenges/revising-aggregations-the-count-function
@@ -781,7 +781,7 @@ WHERE Population > 100000;
 
 
 
-### ▶️ 💡 24. Revising Aggregations - The Sum Function
+### ▶️  24. Revising Aggregations - The Sum Function
 
 
 ```SQL
@@ -793,7 +793,7 @@ WHERE District = "California";
 
 
 
-### ▶️ 💡 25. Revising Aggregations - Averages
+### ▶️  25. Revising Aggregations - Averages
 
 
 
