@@ -1,4 +1,4 @@
-Question Link: https://www.hackerrank.com/challenges/occupations/problem
+-- Question Link: https://www.hackerrank.com/challenges/occupations/problem
 
 
 SELECT
